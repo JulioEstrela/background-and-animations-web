@@ -33,7 +33,25 @@ body {
     display: flex;
 
     background-color: hsla(240, 59%, 34%, 1);
+    /* background-image: var(--background-image-one); */
+
+}
+
+body::after {
+    content: '';
+    position: fixed;
+
+    top: -100%;
+    left: -100%;
+    
+    width: 300%;
+    height: 300%;
+
+    z-index: -1;
     background-image: var(--background-image-one);
+    background-position: top right;
+
+    animation: animate-background 10s linear infinite alternate;
 }
 
 .text-container {
@@ -77,5 +95,11 @@ body {
     }
     100% {
         background-position: bottom center;
+    }
+}
+
+@keyframes animate-background {
+    to {
+        transform: rotate(360deg);
     }
 }
