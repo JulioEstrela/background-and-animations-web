@@ -1,0 +1,81 @@
+:root {
+    --text-background-animation-one: text-background-animation-one 10s cubic-bezier(0, 0.44, 1, 0.2) infinite alternate;
+    --background-image-one: radial-gradient(at 50% 100%, hsla(215, 100%, 16%, 1) 0px, transparent 50%),
+        radial-gradient(at 55% 59%, hsla(254, 73%, 68%, 1) 0px, transparent 50%),
+        radial-gradient(at 99% 99%, hsla(265, 77%, 27%, 1) 0px, transparent 50%),
+        radial-gradient(at 3% 0%, hsla(0, 85%, 44%, 1) 0px, transparent 50%),
+        radial-gradient(at 10% 99%, hsla(0, 65%, 41%, 1) 0px, transparent 50%),
+        radial-gradient(at 6% 71%, hsla(290, 95%, 56%, 1) 0px, transparent 50%),
+        radial-gradient(at 6% 19%, hsla(358, 63%, 46%, 1) 0px, transparent 50%),
+        radial-gradient(at 100% 0%, hsla(194, 100%, 54%, 1) 0px, transparent 50%),
+        url(noise.svg);
+}
+
+*,
+*::before,
+*::after {
+    padding: 0;
+    margin: 0;
+    border: 0;
+    box-sizing: border-box;
+}
+
+html,
+body {
+    height: 100%;
+    width: 100%;
+
+}
+
+body {
+    position: fixed;
+
+    display: flex;
+
+    background-color: hsla(240, 59%, 34%, 1);
+    background-image: var(--background-image-one);
+}
+
+.text-container {
+    position: fixed;
+
+    align-self: center;
+    justify-self: center;
+
+    width: 100%;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.transparent {
+    background-clip: text;
+    background-repeat: no-repeat;
+    background-size: 100%;
+
+    font-family: "Raleway", sans-serif;
+    font-weight: 900;
+    color: transparent;
+}
+
+.chameleon {
+    background-image: url(images/colorfulChameleonAI.jpeg);
+    animation: var(--text-background-animation-one);
+}
+
+.title {
+    font-size: 10cqw;
+}
+
+@keyframes text-background-animation-one {
+    0% {
+        background-position: top center;
+    }
+    25% {
+        transform: scale(1.4);
+    }
+    100% {
+        background-position: bottom center;
+    }
+}
